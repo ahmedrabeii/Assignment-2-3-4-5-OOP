@@ -16,6 +16,13 @@
             //b:Because the class supports 4 principles of OOP
             #endregion
 
+            #region Question 2
+            //a:Shipment
+            //b:ExpressShipment
+            //c:TrackingCode
+            //d:is a mechanism that allows one class to inherit the properties and behaviors of another class.
+            #endregion
+
             #endregion
         }
     }
