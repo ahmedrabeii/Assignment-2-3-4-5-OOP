@@ -66,6 +66,669 @@
             //d:If a partial method has no implementation, the compiler removes the method declaration and any calls to it from the compiled code, provided the partial method follows the rules that allow it to be unimplemented.
             #endregion
             #endregion
+
+            #region Part 02 — Practical
+   
+                // ==========================================
+                // SYSTEM TITLE
+                // ==========================================
+
+                DeliveryUtilities.PrintSystemTitle();
+
+                // ==========================================
+                // DELIVERY CENTER
+                // ==========================================
+
+                Console.WriteLine();
+                Console.WriteLine("========== Delivery Center ==========");
+
+                Console.Write("Enter Center Name: ");
+                string centerName = Console.ReadLine();
+
+                DeliveryCenter center =
+                    new DeliveryCenter();
+
+                center.CenterName = centerName;
+
+                // ==========================================
+                // DRIVER
+                // ==========================================
+
+                Console.WriteLine();
+                Console.WriteLine("========== Driver Information ==========");
+
+                Console.Write("Enter Driver ID: ");
+                int driverId =
+                    int.Parse(Console.ReadLine());
+
+                Console.Write("Enter Driver Name: ");
+                string driverName =
+                    Console.ReadLine();
+
+                Console.Write("Enter Driver Phone: ");
+                string driverPhone =
+                    Console.ReadLine();
+
+                Driver driver =
+                    new Driver(
+                        driverId,
+                        driverName,
+                        driverPhone
+                    );
+
+                center.Driver = driver;
+
+                // ==========================================
+                // STANDARD SHIPMENT
+                // ==========================================
+
+                Console.WriteLine();
+                Console.WriteLine(
+                    "========== Standard Shipment =========="
+                );
+
+                Console.Write("Tracking Code: ");
+                string standardTracking =
+                    Console.ReadLine();
+
+                Console.Write("Description: ");
+                string standardDescription =
+                    Console.ReadLine();
+
+                Console.Write("Weight: ");
+                decimal standardWeight =
+                    decimal.Parse(Console.ReadLine());
+
+                Console.Write("Delivery Fee: ");
+                decimal standardFee =
+                    decimal.Parse(Console.ReadLine());
+
+                Console.Write("City: ");
+                string standardCity =
+                    Console.ReadLine();
+
+                Console.Write("Street: ");
+                string standardStreet =
+                    Console.ReadLine();
+
+                Console.Write("Building Number: ");
+                int standardBuilding =
+                    int.Parse(Console.ReadLine());
+
+                DeliveryAddress standardAddress =
+                    new DeliveryAddress(
+                        standardCity,
+                        standardStreet,
+                        standardBuilding
+                    );
+
+                StandardShipment standardShipment =
+                    new StandardShipment(
+                        standardTracking,
+                        standardDescription,
+                        standardWeight,
+                        standardFee,
+                        standardAddress
+                    );
+
+                // ==========================================
+                // EXPRESS SHIPMENT
+                // ==========================================
+
+                Console.WriteLine();
+                Console.WriteLine(
+                    "========== Express Shipment =========="
+                );
+
+                Console.Write("Tracking Code: ");
+                string expressTracking =
+                    Console.ReadLine();
+
+                Console.Write("Description: ");
+                string expressDescription =
+                    Console.ReadLine();
+
+                Console.Write("Weight: ");
+                decimal expressWeight =
+                    decimal.Parse(Console.ReadLine());
+
+                Console.Write("Delivery Fee: ");
+                decimal expressFee =
+                    decimal.Parse(Console.ReadLine());
+
+                Console.Write("Extra Fee: ");
+                decimal extraFee =
+                    decimal.Parse(Console.ReadLine());
+
+                Console.Write("City: ");
+                string expressCity =
+                    Console.ReadLine();
+
+                Console.Write("Street: ");
+                string expressStreet =
+                    Console.ReadLine();
+
+                Console.Write("Building Number: ");
+                int expressBuilding =
+                    int.Parse(Console.ReadLine());
+
+                DeliveryAddress expressAddress =
+                    new DeliveryAddress(
+                        expressCity,
+                        expressStreet,
+                        expressBuilding
+                    );
+
+                ExpressShipment expressShipment =
+                    new ExpressShipment(
+                        expressTracking,
+                        expressDescription,
+                        expressWeight,
+                        expressFee,
+                        expressAddress,
+                        extraFee
+                    );
+
+                // ==========================================
+                // INTERNATIONAL SHIPMENT
+                // ==========================================
+
+                Console.WriteLine();
+                Console.WriteLine(
+                    "========== International Shipment =========="
+                );
+
+                Console.Write("Tracking Code: ");
+                string internationalTracking =
+                    Console.ReadLine();
+
+                Console.Write("Description: ");
+                string internationalDescription =
+                    Console.ReadLine();
+
+                Console.Write("Weight: ");
+                decimal internationalWeight =
+                    decimal.Parse(Console.ReadLine());
+
+                Console.Write("Delivery Fee: ");
+                decimal internationalFee =
+                    decimal.Parse(Console.ReadLine());
+
+                Console.Write("Destination Country: ");
+                string destinationCountry =
+                    Console.ReadLine();
+
+                Console.Write("Customs Fee: ");
+                decimal customsFee =
+                    decimal.Parse(Console.ReadLine());
+
+                Console.Write("City: ");
+                string internationalCity =
+                    Console.ReadLine();
+
+                Console.Write("Street: ");
+                string internationalStreet =
+                    Console.ReadLine();
+
+                Console.Write("Building Number: ");
+                int internationalBuilding =
+                    int.Parse(Console.ReadLine());
+
+                DeliveryAddress internationalAddress =
+                    new DeliveryAddress(
+                        internationalCity,
+                        internationalStreet,
+                        internationalBuilding
+                    );
+
+                InternationalShipment internationalShipment =
+                    new InternationalShipment(
+                        internationalTracking,
+                        internationalDescription,
+                        internationalWeight,
+                        internationalFee,
+                        internationalAddress,
+                        destinationCountry,
+                        customsFee
+                    );
+
+                // ==========================================
+                // ADD SHIPMENTS
+                // ==========================================
+
+                center.AddShipment(standardShipment);
+                center.AddShipment(expressShipment);
+                center.AddShipment(internationalShipment);
+
+                // ==========================================
+                // TRACKING STATUS INPUT
+                // ==========================================
+
+                Console.WriteLine();
+                Console.WriteLine(
+                    "========== Tracking Status =========="
+                );
+
+                Console.Write(
+                    "Enter Standard Status: "
+                );
+
+                standardShipment.UpdateTrackingStatus(
+                    Console.ReadLine()
+                );
+
+                Console.Write(
+                    "Enter Express Status: "
+                );
+
+                expressShipment.UpdateTrackingStatus(
+                    Console.ReadLine()
+                );
+
+                Console.Write(
+                    "Enter International Status: "
+                );
+
+                internationalShipment.UpdateTrackingStatus(
+                    Console.ReadLine()
+                );
+
+                // ==========================================
+                // PRINT SHIPMENTS
+                // ==========================================
+
+                Console.WriteLine();
+                DeliveryUtilities.PrintSeparator();
+
+                Console.WriteLine("Delivery Center");
+
+                DeliveryUtilities.PrintSeparator();
+
+                Console.WriteLine(
+                    "Center Name: " +
+                    center.CenterName
+                );
+
+                Console.WriteLine(
+                    "Driver: " +
+                    center.Driver.FullName
+                );
+
+                Console.WriteLine(
+                    "Phone: " +
+                    center.Driver.PhoneNumber
+                );
+
+                Console.WriteLine();
+
+                center.PrintAllShipments();
+
+                // ==========================================
+                // OBJECT COPYING
+                // ==========================================
+
+                DeliveryUtilities.PrintSeparator();
+
+                Console.WriteLine("Object Copying");
+
+                DeliveryUtilities.PrintSeparator();
+
+                Shipment shipment1 =
+                    standardShipment;
+
+                Shipment shipment2 =
+                    shipment1;
+
+                Console.WriteLine(
+                    "Original Shipment : " +
+                    shipment1.TrackingCode
+                );
+
+                Console.WriteLine(
+                    "Assigned Shipment : " +
+                    shipment2.TrackingCode
+                );
+
+                Console.WriteLine(
+                    "Same Object : " +
+                    Object.ReferenceEquals(
+                        shipment1,
+                        shipment2
+                    )
+                );
+
+                // ==========================================
+                // COPYSHIPMENT
+                // ==========================================
+
+                Console.WriteLine();
+                Console.WriteLine(
+                    "CopyShipment()"
+                );
+
+                Shipment copiedShipment =
+                    shipment1.CopyShipment();
+
+                Console.WriteLine(
+                    "Original Shipment : " +
+                    shipment1.TrackingCode
+                );
+
+                Console.WriteLine(
+                    "Copied Shipment   : " +
+                    copiedShipment.TrackingCode
+                );
+
+                Console.WriteLine(
+                    "Same Object : " +
+                    Object.ReferenceEquals(
+                        shipment1,
+                        copiedShipment
+                    )
+                );
+
+                // ==========================================
+                // SHALLOW COPY
+                // ==========================================
+
+                DeliveryUtilities.PrintSeparator();
+
+                Console.WriteLine("Shallow Copy");
+
+                DeliveryUtilities.PrintSeparator();
+
+                Shipment shallowCopy =
+                    shipment1.ShallowCopy();
+
+                Console.WriteLine(
+                    "Original Shipment Address : " +
+                    shipment1.Destination.city
+                );
+
+                Console.WriteLine(
+                    "Copied Shipment Address   : " +
+                    shallowCopy.Destination.city
+                );
+
+                Console.WriteLine(
+                    "Same Shipment Object : " +
+                    Object.ReferenceEquals(
+                        shipment1,
+                        shallowCopy
+                    )
+                );
+
+                Console.WriteLine(
+                    "Same DeliveryAddress Object : " +
+                    Object.ReferenceEquals(
+                        shipment1.Destination,
+                        shallowCopy.Destination
+                    )
+                );
+
+                Console.WriteLine();
+                Console.WriteLine(
+                    "Changing copied shipment address..."
+                );
+
+                shallowCopy.Destination.city =
+                    "Giza";
+
+                Console.WriteLine(
+                    "Original Shipment Address : " +
+                    shipment1.Destination.city
+                );
+
+                Console.WriteLine(
+                    "Copied Shipment Address   : " +
+                    shallowCopy.Destination.city
+                );
+
+                // ==========================================
+                // DEEP COPY
+                // ==========================================
+
+                DeliveryUtilities.PrintSeparator();
+
+                Console.WriteLine("Deep Copy");
+
+                DeliveryUtilities.PrintSeparator();
+
+                // Restore original address
+                shipment1.Destination =
+                    new DeliveryAddress(
+                        standardCity,
+                        standardStreet,
+                        standardBuilding
+                    );
+
+                Shipment deepCopy =
+                    shipment1.DeepCopy();
+
+                Console.WriteLine(
+                    "Original Shipment Address : " +
+                    shipment1.Destination.city
+                );
+
+                Console.WriteLine(
+                    "Copied Shipment Address   : " +
+                    deepCopy.Destination.city
+                );
+
+                Console.WriteLine(
+                    "Same Shipment Object : " +
+                    Object.ReferenceEquals(
+                        shipment1,
+                        deepCopy
+                    )
+                );
+
+                Console.WriteLine(
+                    "Same DeliveryAddress Object : " +
+                    Object.ReferenceEquals(
+                        shipment1.Destination,
+                        deepCopy.Destination
+                    )
+                );
+
+                Console.WriteLine();
+                Console.WriteLine(
+                    "Changing copied shipment address..."
+                );
+
+                deepCopy.Destination.city =
+                    "Alexandria";
+
+                Console.WriteLine(
+                    "Original Shipment Address : " +
+                    shipment1.Destination.city
+                );
+
+                Console.WriteLine(
+                    "Copied Shipment Address   : " +
+                    deepCopy.Destination.city
+                );
+
+                // ==========================================
+                // EXTENSION METHODS
+                // ==========================================
+
+                DeliveryUtilities.PrintSeparator();
+
+                Console.WriteLine("Extension Methods");
+
+                DeliveryUtilities.PrintSeparator();
+
+                Console.WriteLine(
+                    standardShipment.GetSummary()
+                );
+
+                Console.WriteLine(
+                    expressShipment.GetSummary()
+                );
+
+                Console.WriteLine(
+                    internationalShipment.GetSummary()
+                );
+
+                Console.WriteLine();
+
+                Console.WriteLine(
+                    standardShipment.TrackingCode +
+                    " Is Delivered : " +
+                    standardShipment.IsDelivered()
+                );
+
+                Console.WriteLine(
+                    internationalShipment.TrackingCode +
+                    " Is Delivered : " +
+                    internationalShipment.IsDelivered()
+                );
+
+                // ==========================================
+                // TRACKING STATUS
+                // ==========================================
+
+                DeliveryUtilities.PrintSeparator();
+
+                Console.WriteLine("Tracking Status");
+
+                DeliveryUtilities.PrintSeparator();
+
+                center.PrintTrackingStatuses();
+
+                // ==========================================
+                // INSURANCE
+                // ==========================================
+
+                DeliveryUtilities.PrintSeparator();
+
+                Console.WriteLine("Insurance");
+
+                DeliveryUtilities.PrintSeparator();
+
+                DeliveryReport.PrintInsurance(
+                    standardShipment
+                );
+
+                DeliveryReport.PrintInsurance(
+                    expressShipment
+                );
+
+                DeliveryReport.PrintInsurance(
+                    internationalShipment
+                );
+
+                // ==========================================
+                // ITrackable ARRAY
+                // ==========================================
+
+                DeliveryUtilities.PrintSeparator();
+
+                Console.WriteLine(
+                    "ITrackable[] Polymorphism"
+                );
+
+                DeliveryUtilities.PrintSeparator();
+
+                ITrackable[] trackableShipments =
+                {
+                standardShipment,
+                expressShipment,
+                internationalShipment
+            };
+
+                for (int i = 0;
+                     i < trackableShipments.Length;
+                     i++)
+                {
+                    Console.WriteLine(
+                        trackableShipments[i]
+                            .GetTrackingStatus()
+                    );
+                }
+
+                // ==========================================
+                // IInsurable ARRAY
+                // ==========================================
+
+                DeliveryUtilities.PrintSeparator();
+
+                Console.WriteLine(
+                    "IInsurable[] Polymorphism"
+                );
+
+                DeliveryUtilities.PrintSeparator();
+
+                IInsurable[] insurableShipments =
+                {
+                standardShipment,
+                expressShipment,
+                internationalShipment
+            };
+
+                for (int i = 0;
+                     i < insurableShipments.Length;
+                     i++)
+                {
+                    Console.WriteLine(
+                        "Insurance Cost: " +
+                        insurableShipments[i]
+                            .CalculateInsurance() +
+                        " EGP"
+                    );
+                }
+
+                // ==========================================
+                // STATIC COUNTER
+                // ==========================================
+
+                DeliveryUtilities.PrintSeparator();
+
+                Console.WriteLine(
+                    "Static Shipment Counter"
+                );
+
+                DeliveryUtilities.PrintSeparator();
+
+                Console.WriteLine(
+                    "Total Shipments Created : " +
+                    Shipment.GetTotalShipmentsCreated()
+                );
+
+                // ==========================================
+                // PARTIAL METHOD
+                // ==========================================
+
+                DeliveryUtilities.PrintSeparator();
+
+                Console.WriteLine("Partial Method");
+
+                DeliveryUtilities.PrintSeparator();
+
+                Console.Write(
+                    "Enter new International Tracking Status: "
+                );
+
+                internationalShipment.UpdateTrackingStatus(
+                    Console.ReadLine()
+                );
+
+                // ==========================================
+                // FINISHED
+                // ==========================================
+
+                DeliveryUtilities.PrintSeparator();
+
+                Console.WriteLine(
+                    "Assignment Completed"
+                );
+
+                DeliveryUtilities.PrintSeparator();
+
+                Console.ReadKey();
+            }
         }
     }
-}
+            #endregion
+
