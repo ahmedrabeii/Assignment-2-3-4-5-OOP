@@ -15,7 +15,17 @@
 
 
             #endregion
+
+            #region Question 2
+            //a:The sealed keyword applied to a class prevents other classes from inheriting from it.
+
+            //b:
+            //A sealed class prevents other classes from inheriting from it.
+            //A sealed method prevents further derived classes from overriding that method.
+
+            //c:No, a sealed method cannot be overridden because the `sealed` keyword prevents further overriding of that method in derived classes.
+            #endregion
             #endregion
         }
-}
+    }
 }
