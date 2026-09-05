@@ -44,7 +44,19 @@
             //No, you cannot create an object from a static class.
 
             #endregion
+
+            #region Questions 04 Extension Methods
+            //a:An Extension Method allows you to add a new method to an existing type without modifying the original type or creating a derived class.
+
+            //b:The this keyword must be used with the first parameter of an extension method.
+
+            //c:An extension method must be declared as a static method inside a static class.
+
+            //d:No, an extension method cannot directly access private members of the class it extends because it is not a member of that class.
+
+            #endregion
+
             #endregion
         }
-}
+    }
 }
