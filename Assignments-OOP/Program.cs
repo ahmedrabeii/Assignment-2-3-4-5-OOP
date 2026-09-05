@@ -15,6 +15,21 @@
             //Copying an object means creating a separate object with copied data, so the two objects are independent.
 
             #endregion
+
+            #region Questions 02 Shallow Copy vs Deep Copy
+            //a:A Shallow Copy creates a new object and copies the values of its members. For reference-type members, it copies the references, not the referenced objects.
+
+            //b:A Deep Copy creates a new object and also creates independent copies of the referenced objects, so the copied object does not share reference-type members with the original.
+
+            //c:In a Shallow Copy, reference-type members are copied as references, so the original and copied objects share the same referenced objects.
+
+            //d:In a Deep Copy, reference-type members are also copied into new independent objects, so the original and copied objects do not share them.
+
+            //e:Deep Copy would be safer when copying an object that contains reference-type members and the copied object needs to be modified independently without affecting the original object.
+
+            #endregion
+
+
             #endregion
         }
     }
