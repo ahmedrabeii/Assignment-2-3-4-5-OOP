@@ -29,8 +29,22 @@
 
             #endregion
 
+            #region Questions 03 Static Members
+            //a:
+            //A static field belongs to the class itself and is shared by all objects of the class.
+            //An instance field belongs to each object, so every object has its own copy.
+
+            //b:
+            //A static method belongs to the class rather than a specific object.
+            //A static method cannot directly access instance members because instance members belong to a specific object.
+
+            //c:A static constructor is used to initialize static members of a class. It is executed automatically once, before the class is first used.
+
+            //d:A static class is a class that cannot be instantiated and is used to contain static members.
+            //No, you cannot create an object from a static class.
 
             #endregion
+            #endregion
         }
-    }
+}
 }
